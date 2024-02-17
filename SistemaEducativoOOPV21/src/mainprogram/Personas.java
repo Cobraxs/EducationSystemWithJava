@@ -19,7 +19,6 @@ class Persona{
 }
 
 class alumno extends Persona{
-	private String NumExpediente;
 	private String Ciclo;
 	private String Curso;
 	private  String Notas;

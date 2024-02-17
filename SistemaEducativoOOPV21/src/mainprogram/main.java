@@ -1,11 +1,21 @@
 package mainprogram;
 
+import java.util.ArrayList;
+
 public class main {
 
 	public static void main(String[] args) {
 		
-		//Registro de alumnos 
-          alumno Jose= new alumno("Jose villatoro","55525343D","Villalba","63747347");
+        ArrayList<alumno> listaAlumnos = new ArrayList<>();
+        
+        alumno Jose=new alumno("Jose Villatoro", "12345678A", "Calle del Sol 123", "123456789");
+        listaAlumnos.add(new alumno("Jose Pérez", "12345678A", "Calle del Sol 123", "123456789"));
+        listaAlumnos.add(new alumno("Maria Rodriguez", "23456789B", "Avenida de la Luna 456", "987654321"));
+        listaAlumnos.add(new alumno("Juan García", "34567890C", "Calle de la Montaña 789", "456789012"));
+        listaAlumnos.add(new alumno("Laura Martínez", "45678901D", "Plaza del Pueblo 1011", "789012345"));
+        listaAlumnos.add(new alumno("Carlos Fernandez", "56789012E", "Camino del Río 1314", "234567890"));
+        
+
 		
 		//Registro de profesores 
 		profesor Zenobia = new profesor("Zenobia","55525343E","Torrelodones","611543232");
@@ -15,13 +25,10 @@ public class main {
 		// CRECIÃ“N DEL CICLO
 		ciclo DAW= new ciclo("DAW");
 		ciclo ASIR= new ciclo("ASIR");
-		
 	
 		//CREACION DE CURSOS 
 		DAW.addCourse();
 		DAW.addCourse();
-		ASIR.addCourse();
-		ASIR.addCourse();
 		//CREACIÃ“N DE MODULOS
 		DAW.addModule("Programacion", Zenobia,1);
 		DAW.addModule("Entornos de desarrollo", Sara,1);
@@ -29,13 +36,20 @@ public class main {
 		DAW.addModule("Base de datos", Benito,1);
 		DAW.addModule("Sistemas",Teresa,1);
 		//DAW.addAlumno(Jose,"Lenguaje de marcas");
-		//DAW.addAlumno(Jose,"Programacion");
-		DAW.DesmatricularAlumno(Jose,"Programacion");
-	   DAW.matricularAlumnoGradoCompleto(Jose, 1);
+
+		
+		
+	   //DAW.matricularAlumnoGradoCompleto(Jose, 1);
 			
+		DAW.matricularAlumnoModulo(Jose,"Programacion");
 		//DAW.addAlumno(listaAlumnos.get(0),"Base de datoss");
 		
-		
+      DAW.matricularAlumnoModulo(Jose,"Programacion");
+		//Añadir lista de alumnos a un modulo
+		for (alumno alumno : listaAlumnos) {
+			DAW.matricularAlumnoModulo(alumno,"Programacion");
+		}
+		//DAW.AlumnosMatriculadosModulo("SISTEMAS");
 	  
 	}
 
